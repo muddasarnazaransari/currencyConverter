@@ -17,7 +17,8 @@ function App() {
   const options = Object.keys(currencyInfo);
 
   const convert = () => {
-    setConvertedAmount(amount * currencyInfo[to]);
+    const originalConvertedAmount = amount * currencyInfo[to];
+    setConvertedAmount(parseFloat(originalConvertedAmount.toFixed(2))); //toFixed will fix the number after decimal to 2 place only
 
     setIsWidthZero(false);
   }
